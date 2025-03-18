@@ -28,7 +28,7 @@ public class ApiCheckFilter extends OncePerRequestFilter {
 
 	// 토큰 검사가 필요한 URL 패턴 목록
 	// /login, /register 검사 X
-	String[] patternArr = { "/board/*", "/member/*", "/cart/*", "/orders/*", "/orders_detail/*", "/review/*" };
+	String[] patternArr = { "/board/*", "/member/*", "/review/*" };
 //	String[] patternArr = { };
 
 	// 패턴 검사기

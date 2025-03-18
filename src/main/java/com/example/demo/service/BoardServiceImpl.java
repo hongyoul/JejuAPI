@@ -38,7 +38,7 @@ public class BoardServiceImpl implements BoardService {
 	// 게시물 등록
 	@Override
 	public int register(BoardDTO dto) {
-		
+	    
 				// 게시물 저장
 				Board entity = dtoToEntity(dto);
 
@@ -48,9 +48,10 @@ public class BoardServiceImpl implements BoardService {
 					String filename = fileUtil.fileUpload(thumnailFile);
 					entity.setThumnail(filename);
 				}
-
+				
 				repository.save(entity);
 				int BoardNo = entity.getBoardNo();
+				
 
 				// 게시물 상세 이미지 저장
 				List<MultipartFile> detailImgFiles = dto.getDetailImgFiles();
@@ -67,6 +68,7 @@ public class BoardServiceImpl implements BoardService {
 				
 			return BoardNo;
 	}
+	
 				
 
 	// 게시글 목록 조회 

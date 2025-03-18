@@ -35,7 +35,7 @@ public class Board extends BaseEntity { // BaseEntity 상속 (등록일, 수정�
 	@Column(length = 255, nullable = false)
 	 String content; // 내용
 	
-	@Column(length = 200, nullable = false)
+	@Column(length = 255, nullable = false)
 	String thumnail; // 대표이미지(썸네일)
 	
 	@Column(length = 20, nullable = false)
