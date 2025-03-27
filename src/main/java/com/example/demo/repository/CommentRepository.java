@@ -21,7 +21,7 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
 	List<Comment> findByBoard_boardNo(int boardNo);
 	
 	// 게시물별 댓글 리스트 삭제
-    @Query(value = "delete FROM comment WHERE comment_board_no = :boardNo", nativeQuery = true)
+    @Query(value = "delete FROM tab_board_img WHERE board_board_no = :boardNo", nativeQuery = true)
     @Modifying
     void deleteByPdNo(@Param("boardNo") int boardNo);
 }

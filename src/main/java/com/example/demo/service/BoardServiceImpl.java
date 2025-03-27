@@ -156,8 +156,7 @@ public class BoardServiceImpl implements BoardService {
 	//게시글 삭제
 	@Override
 	public void remove(int boardNo) {
-		
-		
+				
 		// 게시물 상세 이미지 삭제
 		detailRepository.deleteByBoardNo(boardNo);
 		
