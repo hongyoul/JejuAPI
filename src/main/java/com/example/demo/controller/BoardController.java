@@ -51,6 +51,7 @@ public class BoardController {
 	  //게시물 수정
 	  @PutMapping("/modify")
 	  	public ResponseEntity modify(BoardDTO dto) {
+		  System.out.println("받은 데이터: " + dto);
 	  		 service.modify(dto);
 	  		 return new ResponseEntity(HttpStatus.NO_CONTENT); //204성공코드를 반환한다
 	  	}

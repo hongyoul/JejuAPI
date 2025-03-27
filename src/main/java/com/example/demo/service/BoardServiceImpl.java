@@ -157,8 +157,6 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void remove(int boardNo) {
 		
-		// 게시물 삭제
-		repository.deleteById(boardNo);
 		
 		// 게시물 상세 이미지 삭제
 		detailRepository.deleteByBoardNo(boardNo);
@@ -166,6 +164,8 @@ public class BoardServiceImpl implements BoardService {
 		// 댓글 삭제
 		commentRepository.deleteByPdNo(boardNo);
 		
+		// 게시물 삭제
+		repository.deleteById(boardNo);
 	}
 
 }

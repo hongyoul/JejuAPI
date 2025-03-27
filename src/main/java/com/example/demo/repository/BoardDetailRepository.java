@@ -14,10 +14,11 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface BoardDetailRepository extends JpaRepository<BoardDetail, Integer> {
 
-	@Query(value = "SELECT detail_img FROM tab_board_img WHERE board_id = :boardNo", nativeQuery = true)
+	@Query(value = "SELECT detail_img FROM tab_board_img WHERE board_board_no = :boardNo", nativeQuery = true)
     List<String> selectDetailImgByBoardNo(@Param("boardNo") int boardNo);
 
-    @Query(value = "delete FROM tab_board_img WHERE board_id = :boardNo", nativeQuery = true)
+    @Query(value = "delete FROM tab_board_img WHERE board_board_no = :boardNo", nativeQuery = true)
     @Modifying
     void deleteByBoardNo(@Param("boardNo") int boardNo);
+    
 }

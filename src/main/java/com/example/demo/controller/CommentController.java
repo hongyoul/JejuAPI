@@ -25,7 +25,7 @@ public class CommentController {
 	@Autowired
 	CommentService service;
 	
-	//리뷰 등록
+	//댓글 등록
 		@PostMapping("/register")
 		public ResponseEntity<Integer> register(@RequestBody CommentDTO dto, Authentication authentication){
 			// 로그인한 사용자의 ID 가져오기
@@ -34,7 +34,7 @@ public class CommentController {
 		    // DTO에 로그인한 사용자 ID 설정
 		    dto.setId(memberId);
 			
-		    // 리뷰 등록
+		    // 댓글 등록
 			int newNo = service.register(dto);
 			
 			return new ResponseEntity<>(newNo, HttpStatus.CREATED);
